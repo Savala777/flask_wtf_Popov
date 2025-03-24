@@ -2,13 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href= {{ url_for('static', filename='css/base.css') }} >
+    <link rel="stylesheet" href= {{ url_for('static', filename='css/base.css') }} >
+    {% block stylesheet %}{% endblock%}
     <title>  {{ title }} </title>
 </head>
 <body>
-    <div class="base-header">
+<div class="base-header">
         <h1 class="base1">Миссия Колонизация Марса</h1>
         <h4 class="base2">И на Марсе будут яблони цвести</h4>
-    </div>
+</div>
+{% block content %}{% endblock %}
 </body>
 </html>
