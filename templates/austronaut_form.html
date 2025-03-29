@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+    {% block content %}
+                          <head>
+                            <meta charset="utf-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                            <link rel="stylesheet"
+                            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+                            integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+                            crossorigin="anonymous">
+                            <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}" />
+                            <title>Отбор астронавтов</title>
+                          </head>
+                          <body>
+                            <h1 class="intro">Анкета претендента</h1>
+                            <h1 class="intro">на участие в миссии</h1>
+                            <div>
+                                <form class="login_form" method="post">
+                                    <div class="nameInput">
+                                    <input type="text" class="form-control" id="se-name-input"
+                                    placeholder="Введите фамилию" name="surname">
+                                    <input type="text" class="form-control" id="name-input"
+                                    placeholder="Введите имя" name="name">
+                                    </div>
+                                    <div class="block">
+                                        <label for="educationSelect">Какое у вас образование?</label>
+                                        <select class="form-control" id="educationSelect" name="education">
+                                          <option>Начальное</option>
+                                          <option>Основное общее</option>
+                                          <option>Среднее общее</option>
+                                          <option>Среднее профессиональное</option>
+                                          <option>Высшее</option>
+                                          <option>Без образования</option>
+                                        </select>
+                                     </div>
+                                    <div class="block">
+                                    <div>Какие у вас есть профессии?</div>
+                                    <div><input type="text" class="form-control" id="professions"
+                                                placeholder="Профессии через запятую" name="professions"></div>
+                                    </div>
+                                    <div class="block">
+                                        <div>Укажите пол</div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="radio" name="sex" id="male"
+                                          value="Мужской" checked>
+                                          <label class="form-check-label" for="male">
+                                            Мужской
+                                          </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="radio" name="sex" id="female"
+                                          value="Женский">
+                                          <label class="form-check-label" for="female">
+                                            Женский
+                                          </label>
+                                        </div>
+                                    </div>
+                                    <div class="block">
+                                        <label for="about">Почему вы хотите принять участие в миссии?</label>
+                                        <textarea class="form-control" id="about" rows="3" name="about"></textarea>
+                                    </div>
+                                    <div class="block">
+                                        <input type="checkbox" class="form-check-input" id="acceptMission"
+                                        name="ready" value="True">
+                                        <label class="form-check-label" for="acceptMission">Готовы
+                                        остаться на Марсе?</label>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Отправить</button>
+                                </form>
+                            </div>
+                          </body>
+    {% endblock %}

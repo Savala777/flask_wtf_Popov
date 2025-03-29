@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request
 from json import load
 
 app = Flask(__name__)
@@ -7,6 +7,17 @@ app = Flask(__name__)
 @app.route('/<title>')
 def index(title):
     return render_template('base.html', title=title)
+
+
+@app.route('/answer', methods=['POST', 'GET'])
+def answer():
+    if request.method == 'GET':
+        return render_template('austronaut_form.html')
+    else:
+        data = request.form.to_dict()
+        # ВОПРОС!!!!!! #
+        data['ready'] = str('ready' in data.keys())
+        return render_template('auto_answer.html', **data)
 
 
 @app.route('/list_prof/<mode>')

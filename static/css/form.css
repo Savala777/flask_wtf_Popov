@@ -1,0 +1,21 @@
+form.login_form {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 450px;
+    background-color: #8264a4;
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 10px;
+}
+.intro {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 450px;
+}
+.block {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+#email-input {
+    margin-top: 50px;
+}
